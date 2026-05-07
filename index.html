@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brotherhood — Give Generously, Change Lives</title>
+  <meta name="description" content="Support Masjid construction, Madrasa education, student sponsorships and food parcels for those in need. Every penny counts." />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Favicon placeholder -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕌</text></svg>" />
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<div class="top-bar">
+  <span>☎ +44 7700 000000</span> |
+  <a href="mailto:info@brotherhood.org">info@brotherhood.org</a> |
+  <span>Registered Charity No. 0000000</span>
+</div>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">🕌</div>
+      <div class="logo-text">
+        <strong>Brotherhood</strong>
+        <span>Giving for the sake of Allah</span>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#causes">Our Causes</a></li>
+      <li><a href="#impact">Our Impact</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#causes" class="btn-donate-nav">Donate Now</a></li>
+    </ul>
+
+    <div class="hamburger" role="button" aria-label="Menu" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO SLIDER ===== -->
+<section class="hero" aria-label="Featured campaigns">
+
+  <!-- Slide 1 — Masjid -->
+  <div class="hero-slide active">
+    <img src="images/masjid-1.jpg" alt="Masjid Construction" />
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <span class="hero-tag">Urgent Appeal</span>
+      <h1>Build a House of Allah</h1>
+      <p>Help us construct a Masjid that will serve generations of Muslims for years to come. The Prophet ﷺ said: "Whoever builds a mosque for Allah, Allah will build for him a house in Paradise."</p>
+      <div class="hero-btns">
+        <button class="btn-hero-primary" onclick="openModal('Masjid Construction')">Donate Now</button>
+        <a href="#causes" class="btn-hero-secondary">Learn More</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 2 — Madrasa -->
+  <div class="hero-slide">
+    <img src="images/madrasa-1.jpg" alt="Madrasa Construction" />
+    <div class="overlay" style="background:linear-gradient(90deg,rgba(0,50,0,.75) 40%,transparent)"></div>
+    <div class="hero-content">
+      <span class="hero-tag">Education</span>
+      <h1>Build a Centre of Islamic Knowledge</h1>
+      <p>A Madrasa is a sadaqah jariyah — a gift that keeps giving long after you are gone. Help us build a place where the Quran and Sunnah will be taught for generations.</p>
+      <div class="hero-btns">
+        <button class="btn-hero-primary" onclick="openModal('Madrasa Construction')">Donate Now</button>
+        <a href="#causes" class="btn-hero-secondary">Learn More</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 3 — Education Sponsorship -->
+  <div class="hero-slide">
+    <img src="images/education-1.jpg" alt="Education Sponsorship" />
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <span class="hero-tag">Sponsorship</span>
+      <h1>Sponsor a Student's Future</h1>
+      <p>For just £30 a month you can sponsor a child's full Islamic and secular education — giving them knowledge, confidence and opportunity they would never otherwise have.</p>
+      <div class="hero-btns">
+        <button class="btn-hero-primary" onclick="openModal('Education Sponsorship')">Sponsor Now</button>
+        <a href="#causes" class="btn-hero-secondary">Learn More</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 4 — Food Parcel -->
+  <div class="hero-slide">
+    <img src="images/food-parcel-1.png" alt="Food Parcels" />
+    <div class="overlay" style="background:linear-gradient(90deg,rgba(30,10,0,.78) 40%,transparent)"></div>
+    <div class="hero-content">
+      <span class="hero-tag">Feed the Hungry</span>
+      <h1>No Family Should Go Hungry</h1>
+      <p>A single food parcel can feed a family of five for an entire month. Your generosity today is someone's meal tomorrow. "The best of people are those who are most beneficial to others."</p>
+      <div class="hero-btns">
+        <button class="btn-hero-primary" onclick="openModal('Food Parcel')">Donate Now</button>
+        <a href="#causes" class="btn-hero-secondary">Learn More</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Arrows -->
+  <div class="hero-arrows">
+    <button id="hero-prev" aria-label="Previous slide">&#8592;</button>
+    <button id="hero-next" aria-label="Next slide">&#8594;</button>
+  </div>
+
+  <!-- Dots -->
+  <div class="hero-dots">
+    <span class="active"></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</section>
+
+<!-- ===== STATS BAR ===== -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <strong data-target="5000" data-display="5,000+" data-suffix="+">0</strong>
+      <span>Families Supported</span>
+    </div>
+    <div class="stat-item">
+      <strong data-target="12" data-display="12" data-suffix="">0</strong>
+      <span>Masjids Built</span>
+    </div>
+    <div class="stat-item">
+      <strong data-target="800" data-display="800+" data-suffix="+">0</strong>
+      <span>Students Sponsored</span>
+    </div>
+    <div class="stat-item">
+      <strong data-target="25000" data-display="25,000+" data-suffix="+">0</strong>
+      <span>Food Parcels Delivered</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== AYAH / QUOTE ===== -->
+<div class="ayah-section">
+  <div class="ayah-inner">
+    <p class="ayah-arabic">مَّثَلُ الَّذِينَ يُنفِقُونَ أَمْوَالَهُمْ فِي سَبِيلِ اللَّهِ كَمَثَلِ حَبَّةٍ أَنبَتَتْ سَبْعَ سَنَابِلَ</p>
+    <p class="ayah-english">"The example of those who spend their wealth in the way of Allah is like a seed which grows seven spikes..."</p>
+    <p class="ayah-ref">Surah Al-Baqarah 2:261</p>
+  </div>
+</div>
+
+<!-- ===== OUR CAUSES ===== -->
+<section class="causes-section" id="causes">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Our Causes</span>
+      <h2>Where Your Donation Goes</h2>
+      <p>Every penny you give is directed to one of these four life-changing projects, with full transparency and accountability.</p>
+    </div>
+
+    <div class="causes-grid">
+
+      <!-- CARD 1 — Masjid Construction -->
+      <div class="cause-card">
+        <div class="cause-img-wrap">
+          <img src="images/masjid-2.jpg" alt="Masjid Construction" />
+          <span class="cause-badge">Construction</span>
+        </div>
+        <div class="cause-body">
+          <h3>Masjid Construction</h3>
+          <p>Help build a mosque that will stand as a beacon of faith for the entire community. Every brick you fund is a continuous act of worship — a sadaqah jariyah that will benefit you even after death.</p>
+          <div class="cause-progress">
+            <div class="progress-bar-wrap">
+              <div class="progress-bar-fill" style="width:0" data-width="68%"></div>
+            </div>
+            <div class="progress-meta">
+              <span>Raised: <strong>£68,000</strong></span>
+              <span>Goal: £100,000</span>
+            </div>
+          </div>
+        </div>
+        <div class="cause-footer">
+          <button class="btn-donate" data-cause="Masjid Construction">Donate Now</button>
+          <button class="btn-learn" onclick="alert('Full project details coming soon!')">Details</button>
+        </div>
+      </div>
+
+      <!-- CARD 2 — Madrasa Construction -->
+      <div class="cause-card">
+        <div class="cause-img-wrap">
+          <img src="images/madrasa-2.jpg" alt="Madrasa Construction" />
+          <span class="cause-badge">Education</span>
+        </div>
+        <div class="cause-body">
+          <h3>Madrasa Construction</h3>
+          <p>A Madrasa is an investment in the future of Islam. Your donation helps us build dedicated classrooms, libraries and facilities where children and adults can learn the Quran and Islamic sciences.</p>
+          <div class="cause-progress">
+            <div class="progress-bar-wrap">
+              <div class="progress-bar-fill" style="width:0" data-width="45%"></div>
+            </div>
+            <div class="progress-meta">
+              <span>Raised: <strong>£22,500</strong></span>
+              <span>Goal: £50,000</span>
+            </div>
+          </div>
+        </div>
+        <div class="cause-footer">
+          <button class="btn-donate" data-cause="Madrasa Construction">Donate Now</button>
+          <button class="btn-learn" onclick="alert('Full project details coming soon!')">Details</button>
+        </div>
+      </div>
+
+      <!-- CARD 3 — Education Sponsorship -->
+      <div class="cause-card">
+        <div class="cause-img-wrap">
+          <img src="images/education-2.jpg" alt="Education Sponsorship" />
+          <span class="cause-badge">Sponsorship</span>
+        </div>
+        <div class="cause-body">
+          <h3>Education Sponsorship</h3>
+          <p>Sponsor a student's education for just £30/month. Your support covers school fees, books, uniforms and meals — giving a child the tools they need to build a bright and purposeful future.</p>
+          <div class="cause-progress">
+            <div class="progress-bar-wrap">
+              <div class="progress-bar-fill" style="width:0" data-width="82%"></div>
+            </div>
+            <div class="progress-meta">
+              <span>Sponsored: <strong>820 students</strong></span>
+              <span>Target: 1,000</span>
+            </div>
+          </div>
+        </div>
+        <div class="cause-footer">
+          <button class="btn-donate" data-cause="Education Sponsorship">Sponsor Now</button>
+          <button class="btn-learn" onclick="alert('Full project details coming soon!')">Details</button>
+        </div>
+      </div>
+
+      <!-- CARD 4 — Food Parcel -->
+      <div class="cause-card">
+        <div class="cause-img-wrap">
+          <img src="images/food-parcel-2.png" alt="Food Parcel" />
+          <span class="cause-badge">Feed the Hungry</span>
+        </div>
+        <div class="cause-body">
+          <h3>Food Parcel</h3>
+          <p>One food parcel feeds a family of five for a month. Packed with essential staples — rice, flour, lentils, oil and more — each parcel is delivered directly to families facing hunger and hardship.</p>
+          <div class="cause-progress">
+            <div class="progress-bar-wrap">
+              <div class="progress-bar-fill" style="width:0" data-width="91%"></div>
+            </div>
+            <div class="progress-meta">
+              <span>Delivered: <strong>9,100</strong></span>
+              <span>Target: 10,000</span>
+            </div>
+          </div>
+        </div>
+        <div class="cause-footer">
+          <button class="btn-donate" data-cause="Food Parcel">Donate Now</button>
+          <button class="btn-learn" onclick="alert('Full project details coming soon!')">Details</button>
+        </div>
+      </div>
+
+    </div><!-- /causes-grid -->
+  </div>
+</section>
+
+<!-- ===== MASJID PHOTO GALLERY ===== -->
+<section class="gallery-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">On the Ground</span>
+      <h2>Masjid Construction in Progress</h2>
+      <p>See the real progress your donations are making — from foundation to completion.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item gallery-item--tall">
+        <img src="images/masjid-3.jpg" alt="Masjid construction progress" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="images/masjid-4.jpg" alt="Masjid construction site" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="images/masjid-5.jpg" alt="Masjid building work" loading="lazy" />
+      </div>
+      <div class="gallery-item gallery-item--wide">
+        <img src="images/masjid-6.jpg" alt="Masjid construction overview" loading="lazy" />
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2rem;">
+      <button class="btn-donate" data-cause="Masjid Construction" style="display:inline-block;padding:.75rem 2.5rem;border-radius:30px;font-size:1rem;">Support This Masjid</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="how-section" id="how">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Simple & Transparent</span>
+      <h2>How Your Donation Works</h2>
+      <p>We make giving easy, secure and fully transparent so you always know exactly where your money goes.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-item">
+        <div class="step-icon">🎯</div>
+        <h4>1. Choose a Cause</h4>
+        <p>Select the project you'd like to support — Masjid, Madrasa, Education or Food Parcels.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-icon">💳</div>
+        <h4>2. Make a Donation</h4>
+        <p>Choose your amount and donate securely online. One-time or regular monthly giving available.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-icon">📦</div>
+        <h4>3. We Deliver</h4>
+        <p>Our trusted on-the-ground teams ensure 100% of your donation reaches the intended project.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-icon">📊</div>
+        <h4>4. We Report Back</h4>
+        <p>Receive regular updates, photos and impact reports so you can see the difference you made.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== IMPACT ===== -->
+<section class="impact-section" id="impact">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Alhamdulillah</span>
+      <h2>Our Impact So Far</h2>
+      <p>With the blessing of Allah and the generosity of our donors, we have achieved the following milestones.</p>
+    </div>
+    <div class="impact-grid">
+      <div class="impact-card">
+        <div class="impact-icon">🕌</div>
+        <strong data-target="12" data-display="12">0</strong>
+        <span>Masjids Completed</span>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">📚</div>
+        <strong data-target="8" data-display="8">0</strong>
+        <span>Madrasas Built</span>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">🎓</div>
+        <strong data-target="820" data-display="820+">0</strong>
+        <span>Students Sponsored</span>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">🥗</div>
+        <strong data-target="25000" data-display="25,000+">0</strong>
+        <span>Food Parcels Sent</span>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">🌍</div>
+        <strong data-target="18" data-display="18">0</strong>
+        <span>Countries Reached</span>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">❤️</div>
+        <strong data-target="5000" data-display="5,000+">0</strong>
+        <span>Families Helped</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEWSLETTER ===== -->
+<div class="newsletter-section">
+  <div class="section-inner">
+    <h2>Stay Informed. Stay Connected.</h2>
+    <p>Subscribe to receive updates on our projects, new campaigns, and inspiring stories from the field.</p>
+    <form class="newsletter-form" id="newsletterForm">
+      <input type="email" placeholder="Your email address" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer id="contact">
+  <div class="footer-grid">
+
+    <div class="footer-brand">
+      <a href="#" class="logo">
+        <div class="logo-icon">🕌</div>
+        <div class="logo-text">
+          <strong>Brotherhood</strong>
+          <span>Giving for the sake of Allah</span>
+        </div>
+      </a>
+      <p>Brotherhood is a UK-based charity dedicated to building Masjids and Madrasas, sponsoring education, and delivering food parcels to those who need it most — for the pleasure of Allah alone.</p>
+      <div class="socials">
+        <a href="#" aria-label="Facebook">&#x66;</a>
+        <a href="#" aria-label="Twitter">&#x74;</a>
+        <a href="#" aria-label="Instagram">&#x69;</a>
+        <a href="#" aria-label="YouTube">&#x79;</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Our Causes</h4>
+      <ul>
+        <li><a href="#causes">Masjid Construction</a></li>
+        <li><a href="#causes">Madrasa Construction</a></li>
+        <li><a href="#causes">Education Sponsorship</a></li>
+        <li><a href="#causes">Food Parcels</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">How We Work</a></li>
+        <li><a href="#impact">Our Impact</a></li>
+        <li><a href="#">Annual Reports</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col footer-contact">
+      <h4>Contact Us</h4>
+      <ul>
+        <li><span>📍</span><span>123 Sadaqah Street, London, UK</span></li>
+        <li><span>☎</span><span>+44 7700 000000</span></li>
+        <li><span>✉</span><span>info@brotherhood.org</span></li>
+        <li><span>🕐</span><span>Mon–Fri: 9am – 5pm</span></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Brotherhood. All rights reserved. Registered Charity No. 0000000</span>
+    <span><a href="#">Privacy Policy</a> &bull; <a href="#">Terms of Use</a> &bull; <a href="#">Cookie Policy</a></span>
+  </div>
+</footer>
+
+<!-- ===== DONATION MODAL ===== -->
+<div class="modal-overlay" id="donationModal" role="dialog" aria-modal="true" aria-labelledby="modalCause">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modalCause">Donate Now</h3>
+      <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:.88rem;color:#555;margin-bottom:1rem;">Select or enter your donation amount (£)</p>
+      <div class="amount-grid">
+        <button class="amount-btn" data-amount="10">£10</button>
+        <button class="amount-btn selected" data-amount="25">£25</button>
+        <button class="amount-btn" data-amount="50">£50</button>
+        <button class="amount-btn" data-amount="100">£100</button>
+        <button class="amount-btn" data-amount="250">£250</button>
+        <button class="amount-btn" data-amount="500">£500</button>
+      </div>
+      <div class="form-group">
+        <label for="customAmount">Or enter custom amount (£)</label>
+        <input type="number" id="customAmount" placeholder="e.g. 75" min="1" />
+      </div>
+      <form id="donateForm">
+        <div class="form-group">
+          <label for="donorName">Full Name *</label>
+          <input type="text" id="donorName" placeholder="Your full name" required />
+        </div>
+        <div class="form-group">
+          <label for="donorEmail">Email Address *</label>
+          <input type="email" id="donorEmail" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="donationType">Donation Type</label>
+          <select id="donationType">
+            <option value="one-off">One-off Donation</option>
+            <option value="monthly">Monthly Regular Giving</option>
+            <option value="zakat">Zakat</option>
+            <option value="sadaqah">General Sadaqah</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-submit">Complete Donation ❤️</button>
+      </form>
+      <p class="secure-note">🔒 <span>Secure payment</span> &bull; 100% of your donation goes to the cause &bull; Jazakallah Khayr</p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
